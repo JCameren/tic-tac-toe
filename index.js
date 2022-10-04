@@ -42,6 +42,7 @@ function initGame() {
   turn = 1;
   winner = null;
   render();
+  playAgainBtn.style.visibility = 'hidden'
 }
 
 function render() {
@@ -65,6 +66,9 @@ function handleTurns(e) {
   board[idx] = turn;
   turn *= -1;
   winner = getWinner();
+  if (winner) {
+    playAgainBtn.style.visibility = 'visible'
+  }
   render();
 }
 
