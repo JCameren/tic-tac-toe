@@ -36,7 +36,9 @@ playAgainBtn.addEventListener('click', initGame)
 initGame();
 //initializes and resets game
 function initGame() {
-  board = [null, null, null, null, null, null, null, null, null];
+  board = [null, null, null,
+           null, null, null,
+           null, null, null]
   turn = 1;
   winner = null;
   render();
@@ -52,6 +54,7 @@ function renderGame() {
     const squareEl = document.getElementById(`sq-${idx}`);
     console.log(squareEl)
     squareEl.style.background = COLORS[sq];
+    squareEl.className = !sq ? 'available' : ''
   });
 }
 
